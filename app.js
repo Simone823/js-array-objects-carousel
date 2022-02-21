@@ -69,6 +69,10 @@ let imgCurrent = 0;
 const sliderWrapper = document.querySelector(".slider_wrapper");
 // console.log(sliderWrapper);
 
+// Recupero dal dom div controls_wrapper
+const controlsWrapper = document.querySelector(".controls_wrapper");
+// console.log(controlsWrapper);
+
 
 // Ciclo arrayItems per stampare ad ogni giro le sue proprietà
 for (let i = 0; i < arrayItems.length; i++) {
@@ -93,6 +97,22 @@ for (let i = 0; i < arrayItems.length; i++) {
     // Se imgCurrent che è 0 è uguale a i, aggiungo la classe active a itemActive
     if(imgCurrent == i) {
         itemActive.classList.add("active");
+    }
+
+
+    // Creo il contenitore div control_item con tutte le immagini di ogni oggetto presente nell'arrayItems
+    const sliderControlItem =  
+    `<div class="control_item">
+        <img src="${arrayItems[i].immagine}"/>                                                     
+    </div>`;
+    controlsWrapper.innerHTML += sliderControlItem;
+
+    // Recupero il tag div control_item
+    const controlItemActive = document.querySelector(".control_item");
+
+    // Se imgCurrent che è 0 è uguale a i, aggiungo la classe active a itemActive
+    if(imgCurrent == i) {
+        controlItemActive.classList.add("active-control");
     }
 
 }
@@ -160,35 +180,33 @@ for (let i = 0; i < arrayItems.length; i++) {
 
 
 
-// Recupero dal dom div controls_wrapper
-const controlsWrapper = document.querySelector(".controls_wrapper");
-// console.log(controlsWrapper);
 
-// Ciclo for per stampare control item per ogni immagine
-for (let i = 0; i < items.length; i++) {
 
-  // Creo ad ogni giro il div item contenente l'immagine
+// // Ciclo for per stampare control item per ogni immagine
+// for (let i = 0; i < items.length; i++) {
+
+//   // Creo ad ogni giro il div item contenente l'immagine
     
-    // Creo l'elemento div con classe control_item
-    var controlItem = document.createElement("div");
-    controlItem.classList.add("control_item");
-    // console.log(controlItem);
+//     // Creo l'elemento div con classe control_item
+//     var controlItem = document.createElement("div");
+//     controlItem.classList.add("control_item");
+//     // console.log(controlItem);
 
-    // Creo il tag img con le immagini
-    const controlImg = document.createElement("img");
-    controlImg.src = items[i];
-    // console.log(controlImg);
+//     // Creo il tag img con le immagini
+//     const controlImg = document.createElement("img");
+//     controlImg.src = items[i];
+//     // console.log(controlImg);
 
-    // Appendo il div control item al controls_wrapper
-    controlsWrapper.append(controlItem);
+//     // Appendo il div control item al controls_wrapper
+//     controlsWrapper.append(controlItem);
 
-    // Appendo le immagini al div control item
-    controlItem.append(controlImg);
+//     // Appendo le immagini al div control item
+//     controlItem.append(controlImg);
 
-    if (imgCurrent == i){
-        controlItem.classList.add("active-control");
-    }
-}
+//     if (imgCurrent == i){
+//         controlItem.classList.add("active-control");
+//     }
+// }
 
 
 // Recupero dal dom il pulsante arrow up 
@@ -217,8 +235,6 @@ imgPrev.addEventListener("click", function() {
 
     }
     
-
-
 })
 
 
