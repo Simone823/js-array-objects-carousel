@@ -44,7 +44,7 @@ const items = [
     'img/04.jpg',
     'img/05.jpg'
 ];
-console.log(items);
+// console.log(items);
 
 const title = [
     'Svezia',
@@ -67,7 +67,7 @@ let imgCurrent = 0;
 
 // Recupero dal dom lo slider_wrapper
 const sliderWrapper = document.querySelector(".slider_wrapper");
-console.log(sliderWrapper);
+// console.log(sliderWrapper);
 
 // Ciclo for per stampare div item per ogni immagine
 for (let i = 0; i < items.length; i++) {
@@ -77,25 +77,25 @@ for (let i = 0; i < items.length; i++) {
     // Creo l'elemento div con classe item
     const sliderItem = document.createElement("div");
     sliderItem.classList.add("item");
-    console.log(sliderItem);
+    // console.log(sliderItem);
 
     // Creo il tag img con le immagini items
     const sliderImg = document.createElement("img");
     sliderImg.src = items[i]; 
-    console.log(sliderImg);
+    // console.log(sliderImg);
 
     // Appendo il div item allo slider wrapper
     sliderWrapper.append(sliderItem);
-    console.log(sliderWrapper);
+    // console.log(sliderWrapper);
 
     // Appendo le immagini al div item
     sliderItem.append(sliderImg);
-    console.log(sliderItem);
+    // console.log(sliderItem);
 
     // Creo un div con classe description
     const divDescription = document.createElement("div");
     divDescription.classList.add("description");
-    console.log(divDescription);
+    // console.log(divDescription);
 
     // Appendo divDescription dentro sliderItem
     sliderItem.append(divDescription);
@@ -103,7 +103,7 @@ for (let i = 0; i < items.length; i++) {
     // Creo il tag h1 con classe title
     const titleItem = document.createElement("h1");
     titleItem.classList.add("title-item");
-    console.log(titleItem);
+    // console.log(titleItem);
   
     // Appendo title dentro divDescription
     divDescription.append(titleItem);
@@ -114,7 +114,7 @@ for (let i = 0; i < items.length; i++) {
     // Creo il tag p con classe testo
     const testo = document.createElement("p");
     testo.classList.add("testo");
-    console.log(testo);
+    // console.log(testo);
 
     // Appendo il testo dentro divDescription
     divDescription.append(testo);
@@ -130,7 +130,7 @@ for (let i = 0; i < items.length; i++) {
 
 // Recupero dal dom div controls_wrapper
 const controlsWrapper = document.querySelector(".controls_wrapper");
-console.log(controlsWrapper);
+// console.log(controlsWrapper);
 
 // Ciclo for per stampare control item per ogni immagine
 for (let i = 0; i < items.length; i++) {
@@ -140,12 +140,12 @@ for (let i = 0; i < items.length; i++) {
     // Creo l'elemento div con classe control_item
     var controlItem = document.createElement("div");
     controlItem.classList.add("control_item");
-    console.log(controlItem);
+    // console.log(controlItem);
 
     // Creo il tag img con le immagini
     const controlImg = document.createElement("img");
     controlImg.src = items[i];
-    console.log(controlImg);
+    // console.log(controlImg);
 
     // Appendo il div control item al controls_wrapper
     controlsWrapper.append(controlItem);
@@ -161,15 +161,15 @@ for (let i = 0; i < items.length; i++) {
 
 // Recupero dal dom il pulsante arrow up 
 const imgPrev = document.querySelector(".arrow-up");
-console.log(imgPrev);
+// console.log(imgPrev);
 
 // Seleziono tutte le classi control item
 const allControlItem = document.querySelectorAll(".control_item");
-console.log(allControlItem);
+// console.log(allControlItem);
 
 // Recupero dal dom tutte le classi item dallo sliderWrapper
 const allSliderItem = document.querySelectorAll(".item");
-console.log(allSliderItem);
+// console.log(allSliderItem);
 
 // Al clic del pulsante arrow down passo all'immagine precedente
 imgPrev.addEventListener("click", function() {
@@ -193,7 +193,7 @@ imgPrev.addEventListener("click", function() {
 
 // Recupero dal dom il pulsante arrow down
 const imgNext = document.querySelector(".arrow-down");
-console.log(imgNext);
+// console.log(imgNext);
 
 // Al clic del pulsante arrow up passo all'immagine successiva
 imgNext.addEventListener("click", function() {
