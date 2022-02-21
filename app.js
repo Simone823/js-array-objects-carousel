@@ -69,64 +69,86 @@ let imgCurrent = 0;
 const sliderWrapper = document.querySelector(".slider_wrapper");
 // console.log(sliderWrapper);
 
-// Ciclo for per stampare div item per ogni immagine
-for (let i = 0; i < items.length; i++) {
 
-  // Creo ad ogni giro il div item contenente l'immagine
+// Ciclo arrayItems per stampare ad ogni giro le sue proprietà
+for (let i = 0; i < arrayItems.length; i++) {
 
-    // Creo l'elemento div con classe item
-    const sliderItem = document.createElement("div");
-    sliderItem.classList.add("item");
-    // console.log(sliderItem);
+    const sliderItem =  
+    `<div class="item">
+        <img src="${arrayItems[i].immagine}"/>                                                     
+        <div class="description">
+            <h1 class="title-item">${arrayItems[i].titolo}</h1>
+            <p class="testo">${arrayItems[i].testo}</p>
+        </div>
+    </div>`;
+    console.log(sliderItem);
 
-    // Creo il tag img con le immagini items
-    const sliderImg = document.createElement("img");
-    sliderImg.src = items[i]; 
-    // console.log(sliderImg);
-
-    // Appendo il div item allo slider wrapper
-    sliderWrapper.append(sliderItem);
-    // console.log(sliderWrapper);
-
-    // Appendo le immagini al div item
-    sliderItem.append(sliderImg);
-    // console.log(sliderItem);
-
-    // Creo un div con classe description
-    const divDescription = document.createElement("div");
-    divDescription.classList.add("description");
-    // console.log(divDescription);
-
-    // Appendo divDescription dentro sliderItem
-    sliderItem.append(divDescription);
-
-    // Creo il tag h1 con classe title
-    const titleItem = document.createElement("h1");
-    titleItem.classList.add("title-item");
-    // console.log(titleItem);
-  
-    // Appendo title dentro divDescription
-    divDescription.append(titleItem);
-  
-    // Aggiungo il titolo nel tag h1 title
-    titleItem.append(title[i]);
-
-    // Creo il tag p con classe testo
-    const testo = document.createElement("p");
-    testo.classList.add("testo");
-    // console.log(testo);
-
-    // Appendo il testo dentro divDescription
-    divDescription.append(testo);
-
-    // Aggiungo all'interno del tag p il testo dell'array text
-    testo.append(text[i]);
-
-    if (imgCurrent == i){
-        sliderItem.classList.add("active");
-    }
+    sliderWrapper.innerHTML += sliderItem;
 
 }
+
+
+
+// Ciclo for per stampare div item per ogni immagine
+// for (let i = 0; i < items.length; i++) {
+
+//   // Creo ad ogni giro il div item contenente l'immagine
+
+//     // Creo l'elemento div con classe item
+//     const sliderItem = document.createElement("div");
+//     sliderItem.classList.add("item");
+//     // console.log(sliderItem);
+
+//     // Creo il tag img con le immagini items
+//     const sliderImg = document.createElement("img");
+//     sliderImg.src = items[i]; 
+//     // console.log(sliderImg);
+
+//     // Appendo il div item allo slider wrapper
+//     sliderWrapper.append(sliderItem);
+//     // console.log(sliderWrapper);
+
+//     // Appendo le immagini al div item
+//     sliderItem.append(sliderImg);
+//     // console.log(sliderItem);
+
+//     // Creo un div con classe description
+//     const divDescription = document.createElement("div");
+//     divDescription.classList.add("description");
+//     // console.log(divDescription);
+
+//     // Appendo divDescription dentro sliderItem
+//     sliderItem.append(divDescription);
+
+//     // Creo il tag h1 con classe title
+//     const titleItem = document.createElement("h1");
+//     titleItem.classList.add("title-item");
+//     // console.log(titleItem);
+  
+//     // Appendo title dentro divDescription
+//     divDescription.append(titleItem);
+  
+//     // Aggiungo il titolo nel tag h1 title
+//     titleItem.append(title[i]);
+
+//     // Creo il tag p con classe testo
+//     const testo = document.createElement("p");
+//     testo.classList.add("testo");
+//     // console.log(testo);
+
+//     // Appendo il testo dentro divDescription
+//     divDescription.append(testo);
+
+//     // Aggiungo all'interno del tag p il testo dell'array text
+//     testo.append(text[i]);
+
+//     if (imgCurrent == i){
+//         sliderItem.classList.add("active");
+//     }
+
+// }
+
+
 
 // Recupero dal dom div controls_wrapper
 const controlsWrapper = document.querySelector(".controls_wrapper");
