@@ -1,0 +1,128 @@
+body{
+    background-color: #193737;
+}
+
+.container{
+    /* border: 2px solid orange; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.row{
+    /* border: 1px solid blue; */
+    width: 100%;
+}
+
+.col-10{
+    /* border: 1px dashed magenta; */
+    padding: 0;
+    position: relative;
+}
+
+.slider_wrapper{
+    height: 600px;
+}
+
+.item{
+    height: 100%;
+    display: none;
+}
+
+.item img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.col-2{
+    /* border: 2px solid red; */
+    padding: 0;
+}
+
+.controls_wrapper{
+    height: 100%;
+    position: relative;
+}
+
+.control_item{
+    height: calc(100% / 5);
+    opacity: 0.3;
+}
+
+.control_item img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.controls{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0;
+    z-index: 1;
+}
+
+.arrow-up{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(240, 248, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow-down{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(240, 248, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow-up i {
+    font-size: 30px;
+}
+
+.arrow-down i{
+    font-size: 30px;
+}
+
+
+.active-control{
+    opacity: 1;
+    border: 2px solid white;
+    transition: opacity 100ms ease-in-out;
+}
+
+.active{
+    display: block;
+}
+
+.arrow-up:hover,
+.arrow-down:hover{
+    transform: scale(1.2);
+    transition: transform 120ms linear;
+}
+
+.description{
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 8px;
+    text-align: end;
+}
