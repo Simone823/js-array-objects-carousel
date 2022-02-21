@@ -73,6 +73,7 @@ const sliderWrapper = document.querySelector(".slider_wrapper");
 // Ciclo arrayItems per stampare ad ogni giro le sue proprietà
 for (let i = 0; i < arrayItems.length; i++) {
 
+    // Creo il contenitore div item con tutte le propietà dell'arrayItems
     const sliderItem =  
     `<div class="item">
         <img src="${arrayItems[i].immagine}"/>                                                     
@@ -83,7 +84,16 @@ for (let i = 0; i < arrayItems.length; i++) {
     </div>`;
     console.log(sliderItem);
 
+    // Inserisco sliderItem nel dom all'interno del tag div sliderWrapper
     sliderWrapper.innerHTML += sliderItem;
+
+    // Recupero il tag div item
+    const itemActive = document.querySelector(".item");
+
+    // Se imgCurrent che è 0 è uguale a i, aggiungo la classe active a itemActive
+    if(imgCurrent == i) {
+        itemActive.classList.add("active");
+    }
 
 }
 
