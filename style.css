@@ -1,5 +1,5 @@
 body{
-    background-color: #193737;
+    background-color: #1c1c1c;
 }
 
 .container{
@@ -15,6 +15,8 @@ body{
     /* border: 1px solid blue; */
     width: 100%;
     height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
 }
 
 .col-10{
